@@ -1,0 +1,64 @@
+name: Run Unbilled Agent
+
+on:
+  workflow_dispatch:
+    inputs:
+      period:
+        description: 'Period to close (YYYY-MM), default = current month'
+        required: false
+  schedule:
+    - cron: '0 2 * * *'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Cache pip
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Load .env
+        run: |
+          if [ -f .env ]; then
+            echo "Using .env"
+            set -o allexport; source .env; set +o allexport
+          elif [ -f .env.example ]; then
+            echo "Using .env.example"
+            set -o allexport; source .env.example; set +o allexport
+          fi
+
+      - name: Run agent (close)
+        run: |
+          PERIOD="${{ inputs.period }}"
+          if [ -z "$PERIOD" ] || [ "$PERIOD" = "null" ]; then
+            PERIOD=$(date +'%Y-%m')
+          fi
+          echo "Running close for period $PERIOD"
+          mkdir -p gha-output
+          set -o pipefail
+          make close PERIOD=$PERIOD 2>&1 | tee gha-output/run.log || true
+
+      - name: Export metrics
+        run: |
+          python -c "from unbilled.metrics import export_all; from unbilled.config import DB_PATH, DATA_DIR; export_all(DB_PATH, DATA_DIR)"
+        continue-on-error: true
+
+      - name: Upload logs
+        uses: actions/upload-artifact@v4
+        with:
+          name: unbilled-run
+          path: gha-output
