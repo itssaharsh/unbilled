@@ -10,11 +10,11 @@ PROJECT=${AO_PROJECT:-unbilled}
 AGENT=${AO_AGENT:-claude-code}
 case "${1:-}" in
   orch)
-    exec ao spawn --name unbilled-orch --project "$PROJECT" --agent "$AGENT" --kind orchestrator --mode chat --prompt "$(cat prompts/00-ORCHESTRATOR.md)" ;;
+    exec ao spawn --name unbilled-orch --project "$PROJECT" --harness "$AGENT" --kind orchestrator --mode chat --prompt 'Read prompts/00-ORCHESTRATOR.md in the project worktree and follow it as the complete orchestrator brief.' ;;
   w[0-9][0-9])
     f=$(ls prompts/*-"$1"-*.md | head -1)
     name=$(basename "$f" .md | sed 's/^[0-9]*-//')
-    exec ao spawn --name "$name" --project "$PROJECT" --agent "$AGENT" --kind worker --mode chat --prompt "$(cat "$f")" ;;
+    exec ao spawn --name "$name" --project "$PROJECT" --harness "$AGENT" --kind worker --mode chat --prompt "Read $f in the project worktree and follow it as the complete worker brief." ;;
   list)
     ao session ls --all --include-terminated; echo; ao orchestrator ls ;;
   *)
