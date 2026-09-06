@@ -1,0 +1,21 @@
+# w05-runner-api — close runner, simulated controller, metrics export, FastAPI write path
+
+**Role.** You build the integration harness that runs a close end-to-end and the two things the demo depends on: the exported JSON the UI reads and the FastAPI routes the UI writes through. Start **immediately against stubs** (a stub `decide()` returning deterministic decisions; `LLM_PROVIDER=stub`), so that when w04 lands, only the import changes. Read `prompts/CONTRACTS.md` §3, §4 (`run.py`), §8, §9, §10, §11.
+
+**You own:** `unbilled/run.py`, `unbilled/metrics.py`, `unbilled/api.py`, `tests/test_run.py`, `tests/test_metrics.py`, `tests/test_api.py`, `Makefile` targets `close`, `sweep`, `export`, `demo`. **Do not touch** `estimator.py`, `reflector.py`, `validator.py`, `web/` — import them behind small adapter functions with stub fallbacks if they don't exist yet.
+
+**Deliverable — `run.py`.** `run_close(period, arm, seed, ledger_snapshot=None, reviewer="simulated")` per CONTRACTS §4 comment: snapshot → concurrent `decide()` over vendors (`asyncio` + `MAX_CONCURRENCY` semaphore; each decision writes an `estimate` row with tokens/cost/latency/tool_calls) → route (auto-post if `confidence >= 0.85` and `should_accrue`; escalate otherwise; `should_accrue=false` with high confidence = no entry, no escalation) → resolve escalations with the **simulated controller** (CONTRACTS §8; it is the only agent-side reader of `world_truth.json`, isolate it in `run.py:SimulatedController`) → post JEs → **score**: for every earlier-period estimate of this vendor whose actual bill has now arrived (`received_date <= close_date(period)` and `service_period == that period`), set `actual_amount`, `variance_pct = |final_amount − actual| / actual` (positives only; negatives scored as precision/recall), `scored_in_period` → if arm != `memory_off`: `reflect()` → `store.propose()` → if arm != `validator_off`: `validator.evaluate()` commit/rollback; `memory_off` runs with an empty store every close → snapshot → `metrics.export_all()`. Also `run_sweep(arms, seeds, periods)` and a CLI: `python -m unbilled.run --period 2026-04 --arm main --seed 1`, `--sweep`.
+
+**Deliverable — `metrics.py`.** `export_all(db_path, out_dir)` writing `runs.json`, `worksheet_<period>.json`, `ledger_history.jsonl` exactly per CONTRACTS §9. MAPE over scored positives only; precision/recall over negatives (accrued-but-shouldn't = FP; missed = FN); `pass_at_1` and `pass_k` (a vendor "passes" a seed when within materiality `max(10%, $500)`); `touches` = escalations + edits + rejects; `cache_hit_rate` = cache_read / (input + cache_read). Pending actuals (not yet arrived) are excluded, never zero-scored.
+
+**Deliverable — `api.py`.** FastAPI per CONTRACTS §10 with CORS for the Vite dev server; `uvicorn unbilled.api:app --port 8787`. `/api/review` ticks counters on `cited_rule_ids` (approve → helpful; edit/reject → harmful) and, for edit/reject, appends a `proposed` rule draft (`source=human_correction`, provenance with reason code) via `PrecedentStore.propose`, then re-exports.
+
+**Makefile:** `close PERIOD=…` → `python -m unbilled.run --period $(PERIOD) --arm main --seed 1`; `sweep`; `export`; `demo` → runs `uvicorn` and `npm --prefix web run dev` together (use `&` + `wait`; document Ctrl-C).
+
+**Acceptance test:** `LLM_PROVIDER=stub python -m pytest tests/test_run.py tests/test_metrics.py tests/test_api.py -q` — covers: scoring only when the actual has arrived; MAPE excludes negatives; simulated controller's reason-code selection; `/api/review` edit creates a proposed rule and ticks harmful; `runs.json` validates against the pydantic model. Then `LLM_PROVIDER=stub make close PERIOD=2026-04 && make export` produces the three data files and `make demo` serves them.
+
+**Constraints.** `asyncio`; no threads. Log per-vendor timing. Keep `world_truth.json` access inside `SimulatedController` and `evals/` only.
+
+**Report back:** the CLI usage, the exact `runs.json` you produced from the stub, and any contract gap you hit with the (possibly not yet merged) estimator/reflector/validator imports.
+
+**Time box:** 90 minutes (stub-first: a first PR with stub-based runner + export in 45 min, second PR wiring real modules once merged).
