@@ -7,7 +7,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 PROJECT=${AO_PROJECT:-unbilled}
-AGENT=${AO_AGENT:-claude-code}
+AGENT=${AO_AGENT:-copilot}
 case "${1:-}" in
   orch)
     exec ao spawn --name unbilled-orch --project "$PROJECT" --harness "$AGENT" --kind orchestrator --mode chat --prompt 'Read prompts/00-ORCHESTRATOR.md in the project worktree and follow it as the complete orchestrator brief.' ;;
