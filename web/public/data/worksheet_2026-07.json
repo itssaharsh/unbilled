@@ -1,0 +1,338 @@
+[
+ {
+  "vendor_id": "V01",
+  "name": "Acme Legal LLP",
+  "last3_actuals": [
+   1933.83,
+   1917.42,
+   1695.98
+  ],
+  "method": "po_based",
+  "estimate": 1819.14,
+  "confidence": 0.62,
+  "cited_rule_ids": [
+   "PRE-014"
+  ],
+  "route": "escalated",
+  "human_action": "approve",
+  "human_reason_code": null,
+  "final_amount": 1819.14,
+  "actual": 1956.1,
+  "actual_pending_until": null,
+  "variance_pct": 0.07,
+  "journal_id": "JE-2026-07-V01",
+  "reversal_date": "2026-05-01",
+  "workpaper_md": "## Accrual V01 2026-07\n\n**Conclusion:** accrue $1819.14.\n\n**Method:** run rate.\n\n**Evidence:** bills B0101, B0113; PO none.\n\n**Precedents applied:** PRE-014.\n\n**Reversal:** 2026-05-01.",
+  "account_id": "6100",
+  "estimate_id": 1,
+  "rationale": "Trailing three months average with seasonality."
+ },
+ {
+  "vendor_id": "V02",
+  "name": "Northwind Cloud Services",
+  "last3_actuals": [
+   9886.93,
+   10455.02,
+   8939.37
+  ],
+  "method": "contract",
+  "estimate": 9804.55,
+  "confidence": 0.62,
+  "cited_rule_ids": [
+   "PRE-014"
+  ],
+  "route": "escalated",
+  "human_action": "edit",
+  "human_reason_code": null,
+  "final_amount": 9804.55,
+  "actual": 10316.81,
+  "actual_pending_until": null,
+  "variance_pct": 0.05,
+  "journal_id": "JE-2026-07-V02",
+  "reversal_date": "2026-05-01",
+  "workpaper_md": "## Accrual V02 2026-07\n\n**Conclusion:** accrue $9804.55.\n\n**Method:** run rate.\n\n**Evidence:** bills B0101, B0113; PO none.\n\n**Precedents applied:** PRE-014.\n\n**Reversal:** 2026-05-01.",
+  "account_id": "6100",
+  "estimate_id": 2,
+  "rationale": "Trailing three months average with seasonality."
+ },
+ {
+  "vendor_id": "V03",
+  "name": "Brightline Facilities",
+  "last3_actuals": [
+   19603.87,
+   19791.66,
+   17041.21
+  ],
+  "method": "run_rate",
+  "estimate": 19595.81,
+  "confidence": 0.91,
+  "cited_rule_ids": [
+   "PRE-014"
+  ],
+  "route": "auto_posted",
+  "human_action": null,
+  "human_reason_code": null,
+  "final_amount": 19595.81,
+  "actual": 19559.37,
+  "actual_pending_until": null,
+  "variance_pct": 0.002,
+  "journal_id": "JE-2026-07-V03",
+  "reversal_date": "2026-05-01",
+  "workpaper_md": "## Accrual V03 2026-07\n\n**Conclusion:** accrue $19595.81.\n\n**Method:** run rate.\n\n**Evidence:** bills B0101, B0113; PO none.\n\n**Precedents applied:** PRE-014.\n\n**Reversal:** 2026-05-01.",
+  "account_id": "6100",
+  "estimate_id": 3,
+  "rationale": "Trailing three months average with seasonality."
+ },
+ {
+  "vendor_id": "V04",
+  "name": "Harbor Freight Logistics",
+  "last3_actuals": [
+   27075.34,
+   27963.01,
+   24643.95
+  ],
+  "method": "run_rate",
+  "estimate": 26611.8,
+  "confidence": 0.91,
+  "cited_rule_ids": [
+   "PRE-014"
+  ],
+  "route": "auto_posted",
+  "human_action": null,
+  "human_reason_code": null,
+  "final_amount": 26611.8,
+  "actual": 28475.87,
+  "actual_pending_until": null,
+  "variance_pct": 0.065,
+  "journal_id": "JE-2026-07-V04",
+  "reversal_date": "2026-05-01",
+  "workpaper_md": "## Accrual V04 2026-07\n\n**Conclusion:** accrue $26611.8.\n\n**Method:** run rate.\n\n**Evidence:** bills B0101, B0113; PO none.\n\n**Precedents applied:** PRE-014.\n\n**Reversal:** 2026-05-01.",
+  "account_id": "6100",
+  "estimate_id": 4,
+  "rationale": "Trailing three months average with seasonality."
+ },
+ {
+  "vendor_id": "V05",
+  "name": "Copperfield Staffing",
+  "last3_actuals": [
+   19070.98,
+   18513.07,
+   18335.55
+  ],
+  "method": "run_rate",
+  "estimate": 19276.59,
+  "confidence": 0.62,
+  "cited_rule_ids": [
+   "PRE-014"
+  ],
+  "route": "escalated",
+  "human_action": "approve",
+  "human_reason_code": null,
+  "final_amount": 19276.59,
+  "actual": 17002.84,
+  "actual_pending_until": null,
+  "variance_pct": 0.134,
+  "journal_id": "JE-2026-07-V05",
+  "reversal_date": "2026-05-01",
+  "workpaper_md": "## Accrual V05 2026-07\n\n**Conclusion:** accrue $19276.59.\n\n**Method:** run rate.\n\n**Evidence:** bills B0101, B0113; PO none.\n\n**Precedents applied:** PRE-014.\n\n**Reversal:** 2026-05-01.",
+  "account_id": "6100",
+  "estimate_id": 5,
+  "rationale": "Trailing three months average with seasonality."
+ },
+ {
+  "vendor_id": "V06",
+  "name": "Meridian Analytics",
+  "last3_actuals": [
+   4159.83,
+   3803.41,
+   4530.97
+  ],
+  "method": "run_rate",
+  "estimate": 3681.39,
+  "confidence": 0.62,
+  "cited_rule_ids": [
+   "PRE-014"
+  ],
+  "route": "escalated",
+  "human_action": "edit",
+  "human_reason_code": null,
+  "final_amount": 3681.39,
+  "actual": 3815.45,
+  "actual_pending_until": null,
+  "variance_pct": 0.035,
+  "journal_id": "JE-2026-07-V06",
+  "reversal_date": "2026-05-01",
+  "workpaper_md": "## Accrual V06 2026-07\n\n**Conclusion:** accrue $3681.39.\n\n**Method:** run rate.\n\n**Evidence:** bills B0101, B0113; PO none.\n\n**Precedents applied:** PRE-014.\n\n**Reversal:** 2026-05-01.",
+  "account_id": "6100",
+  "estimate_id": 6,
+  "rationale": "Trailing three months average with seasonality."
+ },
+ {
+  "vendor_id": "V07",
+  "name": "Sable Creative Studio",
+  "last3_actuals": [
+   10177.75,
+   9706.6,
+   9865.24
+  ],
+  "method": "po_based",
+  "estimate": 10241.11,
+  "confidence": 0.91,
+  "cited_rule_ids": [
+   "PRE-014"
+  ],
+  "route": "auto_posted",
+  "human_action": null,
+  "human_reason_code": null,
+  "final_amount": 10241.11,
+  "actual": 9810.88,
+  "actual_pending_until": null,
+  "variance_pct": 0.044,
+  "journal_id": "JE-2026-07-V07",
+  "reversal_date": "2026-05-01",
+  "workpaper_md": "## Accrual V07 2026-07\n\n**Conclusion:** accrue $10241.11.\n\n**Method:** run rate.\n\n**Evidence:** bills B0101, B0113; PO none.\n\n**Precedents applied:** PRE-014.\n\n**Reversal:** 2026-05-01.",
+  "account_id": "6100",
+  "estimate_id": 7,
+  "rationale": "Trailing three months average with seasonality."
+ },
+ {
+  "vendor_id": "V08",
+  "name": "Tallgrass Landscaping",
+  "last3_actuals": [
+   28843.56,
+   25225.84,
+   26815.42
+  ],
+  "method": "run_rate",
+  "estimate": 31179.91,
+  "confidence": 0.91,
+  "cited_rule_ids": [
+   "PRE-014"
+  ],
+  "route": "auto_posted",
+  "human_action": null,
+  "human_reason_code": null,
+  "final_amount": 31179.91,
+  "actual": 27555.85,
+  "actual_pending_until": null,
+  "variance_pct": 0.132,
+  "journal_id": "JE-2026-07-V08",
+  "reversal_date": "2026-05-01",
+  "workpaper_md": "## Accrual V08 2026-07\n\n**Conclusion:** accrue $31179.91.\n\n**Method:** run rate.\n\n**Evidence:** bills B0101, B0113; PO none.\n\n**Precedents applied:** PRE-014.\n\n**Reversal:** 2026-05-01.",
+  "account_id": "6100",
+  "estimate_id": 8,
+  "rationale": "Trailing three months average with seasonality."
+ },
+ {
+  "vendor_id": "V09",
+  "name": "Orion Security Co",
+  "last3_actuals": [
+   17064.65,
+   17007.57,
+   18186.99
+  ],
+  "method": null,
+  "estimate": null,
+  "confidence": 0.91,
+  "cited_rule_ids": [
+   "PRE-014"
+  ],
+  "route": "no_entry",
+  "human_action": null,
+  "human_reason_code": null,
+  "final_amount": null,
+  "actual": null,
+  "actual_pending_until": null,
+  "variance_pct": null,
+  "journal_id": null,
+  "reversal_date": null,
+  "workpaper_md": null,
+  "account_id": "6100",
+  "estimate_id": 9,
+  "rationale": "Trailing three months average with seasonality."
+ },
+ {
+  "vendor_id": "V10",
+  "name": "Ridgeway Insurance",
+  "last3_actuals": [
+   1861.62,
+   1774.2,
+   1696.57
+  ],
+  "method": null,
+  "estimate": null,
+  "confidence": 0.91,
+  "cited_rule_ids": [
+   "PRE-014"
+  ],
+  "route": "no_entry",
+  "human_action": null,
+  "human_reason_code": null,
+  "final_amount": null,
+  "actual": null,
+  "actual_pending_until": null,
+  "variance_pct": null,
+  "journal_id": null,
+  "reversal_date": null,
+  "workpaper_md": null,
+  "account_id": "6100",
+  "estimate_id": 10,
+  "rationale": "Trailing three months average with seasonality."
+ },
+ {
+  "vendor_id": "V11",
+  "name": "Lumen Telecom",
+  "last3_actuals": [
+   10356.51,
+   10578.17,
+   9122.72
+  ],
+  "method": null,
+  "estimate": null,
+  "confidence": 0.91,
+  "cited_rule_ids": [
+   "PRE-014"
+  ],
+  "route": "no_entry",
+  "human_action": null,
+  "human_reason_code": null,
+  "final_amount": null,
+  "actual": null,
+  "actual_pending_until": null,
+  "variance_pct": null,
+  "journal_id": null,
+  "reversal_date": null,
+  "workpaper_md": null,
+  "account_id": "6100",
+  "estimate_id": 11,
+  "rationale": "Trailing three months average with seasonality."
+ },
+ {
+  "vendor_id": "V12",
+  "name": "Pinecrest Catering",
+  "last3_actuals": [
+   9100.24,
+   10550.35,
+   10716.39
+  ],
+  "method": null,
+  "estimate": null,
+  "confidence": 0.91,
+  "cited_rule_ids": [
+   "PRE-014"
+  ],
+  "route": "no_entry",
+  "human_action": null,
+  "human_reason_code": null,
+  "final_amount": null,
+  "actual": null,
+  "actual_pending_until": null,
+  "variance_pct": null,
+  "journal_id": null,
+  "reversal_date": null,
+  "workpaper_md": null,
+  "account_id": "6100",
+  "estimate_id": 12,
+  "rationale": "Trailing three months average with seasonality."
+ }
+]

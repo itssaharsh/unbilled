@@ -1,0 +1,370 @@
+{
+ "generated_at": "2026-09-06T00:00:00Z",
+ "world_seed": 20260906,
+ "materiality": {
+  "pct": 0.1,
+  "abs": 500
+ },
+ "periods": [
+  "2026-04",
+  "2026-05",
+  "2026-06",
+  "2026-07"
+ ],
+ "arms": {
+  "main": {
+   "closes": [
+    {
+     "period": "2026-04",
+     "seeds": [
+      1,
+      2
+     ],
+     "mape": 0.34,
+     "n_scored": 8,
+     "precision": 0.7,
+     "recall": 0.6,
+     "pass_at_1": 0.5,
+     "pass_k": 0.4,
+     "cost_usd": 0.25,
+     "seconds": 310,
+     "touches": 10,
+     "auto_posted": 4,
+     "escalated": 8,
+     "cache_hit_rate": 0.0,
+     "ledger_size": 0,
+     "rules_added": 0,
+     "rules_deprecated": 0,
+     "rules_rejected": 0,
+     "validator_decision": null
+    },
+    {
+     "period": "2026-05",
+     "seeds": [
+      1,
+      2
+     ],
+     "mape": 0.21,
+     "n_scored": 8,
+     "precision": 0.8,
+     "recall": 0.75,
+     "pass_at_1": 0.6,
+     "pass_k": 0.55,
+     "cost_usd": 0.18,
+     "seconds": 240,
+     "touches": 6,
+     "auto_posted": 6,
+     "escalated": 6,
+     "cache_hit_rate": 0.55,
+     "ledger_size": 9,
+     "rules_added": 9,
+     "rules_deprecated": 0,
+     "rules_rejected": 5,
+     "validator_decision": "commit"
+    },
+    {
+     "period": "2026-06",
+     "seeds": [
+      1,
+      2
+     ],
+     "mape": 0.24,
+     "n_scored": 8,
+     "precision": 0.9,
+     "recall": 0.9,
+     "pass_at_1": 0.8,
+     "pass_k": 0.7,
+     "cost_usd": 0.14,
+     "seconds": 170,
+     "touches": 4,
+     "auto_posted": 8,
+     "escalated": 3,
+     "cache_hit_rate": 0.62,
+     "ledger_size": 14,
+     "rules_added": 6,
+     "rules_deprecated": 1,
+     "rules_rejected": 2,
+     "validator_decision": "commit"
+    },
+    {
+     "period": "2026-07",
+     "seeds": [
+      1,
+      2
+     ],
+     "mape": 0.08,
+     "n_scored": 8,
+     "precision": 0.9,
+     "recall": 0.9,
+     "pass_at_1": 0.9,
+     "pass_k": 0.85,
+     "cost_usd": 0.1,
+     "seconds": 120,
+     "touches": 2,
+     "auto_posted": 9,
+     "escalated": 2,
+     "cache_hit_rate": 0.66,
+     "ledger_size": 17,
+     "rules_added": 4,
+     "rules_deprecated": 1,
+     "rules_rejected": 1,
+     "validator_decision": "commit"
+    }
+   ]
+  },
+  "memory_off": {
+   "closes": [
+    {
+     "period": "2026-04",
+     "seeds": [
+      1,
+      2
+     ],
+     "mape": 0.34,
+     "n_scored": 8,
+     "precision": 0.7,
+     "recall": 0.6,
+     "pass_at_1": 0.5,
+     "pass_k": 0.4,
+     "cost_usd": 0.25,
+     "seconds": 310,
+     "touches": 10,
+     "auto_posted": 4,
+     "escalated": 8,
+     "cache_hit_rate": 0.0,
+     "ledger_size": 0,
+     "rules_added": 0,
+     "rules_deprecated": 0,
+     "rules_rejected": 0,
+     "validator_decision": null
+    },
+    {
+     "period": "2026-05",
+     "seeds": [
+      1,
+      2
+     ],
+     "mape": 0.33,
+     "n_scored": 8,
+     "precision": 0.8,
+     "recall": 0.75,
+     "pass_at_1": 0.6,
+     "pass_k": 0.4,
+     "cost_usd": 0.24,
+     "seconds": 240,
+     "touches": 10,
+     "auto_posted": 6,
+     "escalated": 6,
+     "cache_hit_rate": 0.55,
+     "ledger_size": 9,
+     "rules_added": 9,
+     "rules_deprecated": 0,
+     "rules_rejected": 5,
+     "validator_decision": "commit"
+    },
+    {
+     "period": "2026-06",
+     "seeds": [
+      1,
+      2
+     ],
+     "mape": 0.35,
+     "n_scored": 8,
+     "precision": 0.9,
+     "recall": 0.9,
+     "pass_at_1": 0.8,
+     "pass_k": 0.45,
+     "cost_usd": 0.25,
+     "seconds": 170,
+     "touches": 9,
+     "auto_posted": 8,
+     "escalated": 3,
+     "cache_hit_rate": 0.62,
+     "ledger_size": 14,
+     "rules_added": 6,
+     "rules_deprecated": 1,
+     "rules_rejected": 2,
+     "validator_decision": "commit"
+    },
+    {
+     "period": "2026-07",
+     "seeds": [
+      1,
+      2
+     ],
+     "mape": 0.32,
+     "n_scored": 8,
+     "precision": 0.9,
+     "recall": 0.9,
+     "pass_at_1": 0.9,
+     "pass_k": 0.4,
+     "cost_usd": 0.24,
+     "seconds": 120,
+     "touches": 10,
+     "auto_posted": 9,
+     "escalated": 2,
+     "cache_hit_rate": 0.66,
+     "ledger_size": 17,
+     "rules_added": 4,
+     "rules_deprecated": 1,
+     "rules_rejected": 1,
+     "validator_decision": "commit"
+    }
+   ]
+  },
+  "validator_off": {
+   "closes": [
+    {
+     "period": "2026-04",
+     "seeds": [
+      1,
+      2
+     ],
+     "mape": 0.34,
+     "n_scored": 8,
+     "precision": 0.7,
+     "recall": 0.6,
+     "pass_at_1": 0.5,
+     "pass_k": 0.4,
+     "cost_usd": 0.25,
+     "seconds": 310,
+     "touches": 10,
+     "auto_posted": 4,
+     "escalated": 8,
+     "cache_hit_rate": 0.0,
+     "ledger_size": 0,
+     "rules_added": 0,
+     "rules_deprecated": 0,
+     "rules_rejected": 0,
+     "validator_decision": null
+    },
+    {
+     "period": "2026-05",
+     "seeds": [
+      1,
+      2
+     ],
+     "mape": 0.19,
+     "n_scored": 8,
+     "precision": 0.8,
+     "recall": 0.75,
+     "pass_at_1": 0.6,
+     "pass_k": 0.5,
+     "cost_usd": 0.22,
+     "seconds": 240,
+     "touches": 5,
+     "auto_posted": 6,
+     "escalated": 6,
+     "cache_hit_rate": 0.55,
+     "ledger_size": 9,
+     "rules_added": 9,
+     "rules_deprecated": 0,
+     "rules_rejected": 5,
+     "validator_decision": "commit"
+    },
+    {
+     "period": "2026-06",
+     "seeds": [
+      1,
+      2
+     ],
+     "mape": 0.29,
+     "n_scored": 8,
+     "precision": 0.9,
+     "recall": 0.9,
+     "pass_at_1": 0.8,
+     "pass_k": 0.5,
+     "cost_usd": 0.2,
+     "seconds": 170,
+     "touches": 7,
+     "auto_posted": 8,
+     "escalated": 3,
+     "cache_hit_rate": 0.62,
+     "ledger_size": 14,
+     "rules_added": 6,
+     "rules_deprecated": 1,
+     "rules_rejected": 2,
+     "validator_decision": "commit"
+    },
+    {
+     "period": "2026-07",
+     "seeds": [
+      1,
+      2
+     ],
+     "mape": 0.14,
+     "n_scored": 8,
+     "precision": 0.9,
+     "recall": 0.9,
+     "pass_at_1": 0.9,
+     "pass_k": 0.65,
+     "cost_usd": 0.19,
+     "seconds": 120,
+     "touches": 4,
+     "auto_posted": 9,
+     "escalated": 2,
+     "cache_hit_rate": 0.66,
+     "ledger_size": 17,
+     "rules_added": 4,
+     "rules_deprecated": 1,
+     "rules_rejected": 1,
+     "validator_decision": "commit"
+    }
+   ]
+  }
+ },
+ "validator_log": [
+  {
+   "period": "2026-05",
+   "mape_incumbent": 0.31,
+   "mape_candidate": 0.19,
+   "cost_delta_pct": -8,
+   "decision": "commit",
+   "ops": 9
+  },
+  {
+   "period": "2026-05",
+   "mape_incumbent": 0.19,
+   "mape_candidate": 0.23,
+   "cost_delta_pct": 2,
+   "decision": "rollback",
+   "ops": 5
+  },
+  {
+   "period": "2026-06",
+   "mape_incumbent": 0.21,
+   "mape_candidate": 0.24,
+   "cost_delta_pct": 1,
+   "decision": "rollback",
+   "ops": 2
+  },
+  {
+   "period": "2026-07",
+   "mape_incumbent": 0.24,
+   "mape_candidate": 0.08,
+   "cost_delta_pct": -12,
+   "decision": "commit",
+   "ops": 4
+  }
+ ],
+ "rule_discovery": [
+  {
+   "rule_id": "PRE-031",
+   "claim": "V04 invoices ~22 days after period end",
+   "inferred": 22,
+   "sealed": 21.4,
+   "ok": true
+  }
+ ],
+ "summary": {
+  "mape_first": 0.34,
+  "mape_last": 0.08,
+  "touches_first": 10,
+  "touches_last": 2,
+  "cost_first": 0.25,
+  "cost_last": 0.1,
+  "notes": {
+   "2026-06": "A run-rate rule over-generalized to the quarterly vendor; harmful counter fired and it was deprecated."
+  }
+ }
+}
