@@ -168,7 +168,8 @@ All tools: `strict: true`, `additionalProperties: false`, every param `required`
 
 ## 7. Model / API rules (verified; violations return HTTP 400)
 
-- Estimator default `claude-haiku-4-5`: `temperature` allowed (seed variation: seed 1 → 0.2, seed 2 → 0.7; validator replays at 0.0). **Do not pass `output_config.effort`** (rejected on Haiku). Structured output via `output_config={"format": {"type": "json_schema", "schema": ...}}`.
+- **SDK:** `anthropic` **1.x** is installed (1.4.0). In 1.x, `temperature`/`top_p`/`top_k` are **not keyword arguments** of `messages.create()` (TypeError) — pass them via `extra_body={"temperature": 0.2}` and only for Haiku 4.5. The SDK's HTTP layer is `httpx2`; any transport/mocks handed to the SDK must come from `httpx2`, and the plain `httpx` package is only for the QBO client.
+- Estimator default `claude-haiku-4-5`: temperature allowed via `extra_body` (seed variation: seed 1 → 0.2, seed 2 → 0.7; validator replays at 0.0). **Do not pass `output_config.effort`** (rejected on Haiku). Structured output via `output_config={"format": {"type": "json_schema", "schema": ...}}`.
 - Reflector default `claude-sonnet-5` (or `claude-opus-5`): `thinking={"type": "adaptive"}`; **never pass `temperature`, `top_p`, `top_k`, or `budget_tokens`**; no assistant prefill.
 - Tools: `strict: True` on the tool definition + `additionalProperties: False` + full `required`.
 - Parse tool inputs with `json.loads`, never string-match. Return all `tool_result` blocks for one assistant turn in one user message; failed tools use `is_error: true`.
